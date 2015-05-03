@@ -1,0 +1,2 @@
+RewriteEngine on
+      RewriteRule ^([0-9]+)([a-zA-Z0-9_-])$ team.php?id=$1
