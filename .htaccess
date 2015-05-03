@@ -1,4 +1,4 @@
 RewriteEngine on
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^([0-9]+)([a-zA-Z0-9_-]+)$ team.php?id=$1&alias=$2
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([0-9]+)([a-z0-9_-]+)$ team.php?id=$1&alias=$2
