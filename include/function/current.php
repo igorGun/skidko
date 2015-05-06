@@ -70,7 +70,7 @@ function current_frontend1(){           //заменяет верхнюю фун
                               ");
         //print_r($group_id);
         list($tmp) = mysql_fetch_row($counter);
-        $k = /*$res['ename'].$res['id'];//изменено*/"/group.php?idg=".$res['id'];
+        $k = $res['ename'].$res['id'];//изменено"/group.php?idg=".$res['id'];
         
         $v = $res['name'];
         if ($tmp > 0) $a[$k] = array($v => $tmp);
@@ -284,10 +284,10 @@ function current_link1($link, $links, $span=false) {
 	$span = $span ? '<span></span>' : '';
 	foreach($links AS $l=>$n) {
         $group_id = intval(substr($l,-2));
-
-      /* if ($l!="/group.php?idg=1"){
+        
+        if ($l!="/group.php?idg=1"){
         	$l=substr($l, 0, -2);
-        }*/
+        }
          
         //print_r($global_group_id);                    //получаем id группы. -2 - ограничивает количество групп 99 штуками
         if ($group_id==0) $group_id=1;
