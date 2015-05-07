@@ -16,7 +16,7 @@
 					<?php if(is_array($coupons)){foreach($coupons AS $index=>$one) { ?>
 					<tr <?php echo $index%2?'row-b':'class="row-a"'; ?> id="order-list-id-<?php echo $one['id']; ?>">
 						<td><?php echo $one['id']; ?></td>
-						<td><a class="deal-title" href="/team.php?id=<?php echo $one['team_id']; ?>" target="_blank"><?php echo $teams[$one['team_id']]['title']; ?></a></td>
+						<td><a class="deal-title" href="/<?php echo $one['team_id'].'_'.$teams[$one['team_id']]['alias']; ?>" target="_blank"><?php echo $teams[$one['team_id']]['title']; ?></a></td>
 						
 						<td nowrap><?php echo $users[$one['user_id']]['email']; ?><br/><?php echo $users[$one['user_id']]['username']; ?></td>
 						<td nowrap><?php echo date('Y-m-d',$one['expire_time']); ?></td>
