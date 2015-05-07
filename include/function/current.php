@@ -70,7 +70,7 @@ function current_frontend1(){           //заменяет верхнюю фун
                               ");
         //print_r($group_id);
         list($tmp) = mysql_fetch_row($counter);
-        $k = $res['ename'].$res['id'];//изменено"/group.php?idg=".$res['id'];
+        $k = "/".$res['ename'].$res['id'];//изменено"/group.php?idg=".$res['id'];
         
         $v = $res['name'];
         if ($tmp > 0) $a[$k] = array($v => $tmp);
@@ -279,12 +279,13 @@ function current_link($link, $links, $span=false) {
 function current_link1($link, $links, $span=false) {  
 	global $group;
     $global_group_id = $group['id'];
-   
+   //print_r($global_group_id);
 	$html = '';
 	$span = $span ? '<span></span>' : '';
 	foreach($links AS $l=>$n) {
+		//print_r($l);
+		//print_r($links);
         $group_id = intval(substr($l,-2));
-        
         if ($l!="/group.php?idg=1"){
         	$l=substr($l, 0, -2);
         }
