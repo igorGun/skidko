@@ -1,6 +1,7 @@
 <div class="index_small">
     <div class="small_top">
-        	<a href="/<?php echo $team['id'].'_'.$team['a'.'li'.'as']; ?>"><img src="<?php if(1==preg_match('/http:/',$team['image']))echo $team['image']; else echo '/static/'.$team["image"]; ?>" alt="<?=$team['title']; ?>" width="380" border="0" height="213"/></a>
+        	<a href="/<?php echo $team['id'].'_'.$team['alias']; ?>"><img src="<?php if(1==preg_match('/http:/',$team['image']))echo $team['image']; 
+            else echo '/static/'.$team["image"]; ?>" alt="<?=$team['title']; ?>" width="380" border="0" height="213"/></a>
     </div>
     
     
@@ -10,7 +11,7 @@
     
     <div class="small_bottom">
         	<div class="small_bottom_txt">
-            <a href="/<?php echo $team['id'].'_'.$team['a'.'li'.'as']; ?>"><?=$team['title'];?></a>
+            <a href="/<?php echo $team['id'].'_'.$team['alias']; ?>"><?=$team['title'];?></a>
             </div>
             <div class="small_bottom_time" diff="<?php echo $diff_time; ?>000">
              <?php //countdown($team['end_time']); ?>
@@ -20,7 +21,7 @@
             <?php echo $all_days[$team['id']] ? $all_days[$team['id']]['q'] : 0; ?>
             </div>
             
-            <a href="/<?php echo $team['id'].'_'.$team['a'.'li'.'as']; ?>" class="knopka_ok"><?=(moneyit($team['team_comission'])!=0?'Купить':'Получить')?></a>
+            <a href="/<?php echo $team['id'].'_'.$team['alias']; ?>" class="knopka_ok"><?=(moneyit($team['team_comission'])!=0?'Купить':'Получить')?></a>
      </div>
   
 </div>
