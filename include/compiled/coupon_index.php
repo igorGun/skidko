@@ -36,8 +36,9 @@
 							<img src="<?php if(1==preg_match('/http:/',$teams[$one['team_id']]['image']))echo $teams[$one['team_id']]['image']; else echo '/static/'.$teams[$one['team_id']]['image']; ?>" width="380" height="213"/>
                             <div class="row_txt">
                                 <div class="row_txt_1">
-                                    <a class="deal-title" href="/team.php?id=<?php echo $one['team_id']; ?>" target="_blank"><?php echo $teams[$one['team_id']]['title']; ?></a>
+                                    <a class="deal-title" href="/<?php echo $one['team_id'].'_'.$teams[$one['team_id']]['alias']; ?>" target="_blank"><?php echo $teams[$one['team_id']]['title']; ?></a>
                                     <br /><br />
+                                    
                                     <span>Код купона: <?php echo $one['id']; ?></span><br />
                                     <span>Срок действия: <?php echo date('d.m.Y', $one['expire_time']); ?></span>
                                 </div>
