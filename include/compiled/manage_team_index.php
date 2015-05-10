@@ -23,8 +23,9 @@
 					<?php $oldstate = $one['state']; ?>
 					<?php $one['state'] = team_state($one); ?>
 					<tr <?php echo $index%2?'row-b':'class="row-a"'; ?> id="team-list-id-<?php echo $one['id']; ?>">
-						<td><?php echo $one['id']; ?></a></td>
-						<td><a class="deal-title" href="/team.php?id=<?php echo $one['id']; ?>" target="_blank"><?php echo $one['title']; ?></a></td>
+						<td><?php echo $one['id'];?></a></td>
+
+						<td><a class="deal-title" href="/<?php echo $one['id'].'_'.$one['alias']; ?>" target="_blank"><?php echo $one['title']; ?></a></td>
 						<td nowrap><?php if ($one['city_id']==0) echo 'Все города'; echo $cities[$one['city_id']]['name']; ?><br/><?php echo $groups[$one['group_id']]['name']; ?></td>
 						<td nowrap><?php echo date('Y-m-d',$one['begin_time']); ?><br/><?php echo date('Y-m-d',$one['end_time']); ?></td>
 						<td nowrap><?php echo $all_days[$one['id']] ? $all_days[$one['id']]['q'] : 0; ?>/<?php echo $per_day[$one['id']] ? $per_day[$one['id']]['number'] : 0; ?></td>
