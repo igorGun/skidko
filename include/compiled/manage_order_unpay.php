@@ -17,7 +17,7 @@
 					<?php if(is_array($orders)){foreach($orders AS $index=>$one) { ?>
 					<tr <?php echo $index%2?'row-b':'class="row-a"'; ?> id="order-list-id-<?php echo $one['id']; ?>">
 						<td><?php echo $one['id']; ?></td>
-						<td><?php echo $one['team_id']; ?>&nbsp;(<a class="deal-title" href="/team.php?id=<?php echo $one['team_id']; ?>" target="_blank"><?php echo $teams[$one['team_id']]['title']; ?></a>)</td>
+						<td><?php echo $one['team_id']; ?>&nbsp;(<a class="deal-title" href="/<?php echo $one['team_id'].'_'.$teams[$one['team_id']]['alias']; ?>" target="_blank"><?php echo $teams[$one['team_id']]['title']; ?></a>)</td>
 						<td><a href="/ajax/manage.php?action=userview&id=<?php echo $one['user_id']; ?>" class="ajaxlink"><?php echo $users[$one['user_id']]['email']; ?><br/><?php echo $users[$one['user_id']]['username']; ?></a></td>
 						<td><?php echo $one['quantity']; ?></td>
 						<td><?php echo moneyit($one['origin']); ?><span class="money"><?php echo $currency; ?></span></td>
