@@ -5,7 +5,9 @@ $id = abs(intval($_GET['id']));
 if (!$id || !$team = Table::FetchForce('team', $id) ) {
 	Utility::Redirect( WEB_ROOT . '/team/index.php');
 }
-
+if ($_SERVER["REQUEST_URI"]=="/team.php?id={$id}") {
+	header("Location: {$team['id']}_{$team['alias']}");
+}
 /* refer */
 if (abs(intval($_GET['r']))) { 
 	if($_rid) cookieset('_rid', abs(intval($_GET['r'])));
