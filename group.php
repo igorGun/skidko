@@ -10,7 +10,9 @@ $idt = abs(intval($_GET['idt']));
 if ($idg!='none') {
     $group = Table::Fetch('category', $idg, 'id');
    
-
+if ($_SERVER["REQUEST_URI"]=="/group.php?idg={$idg}") {
+    header("Location: {$group['ename']}");
+}  
     if ($group) { 
         cookie_group($group);
         $currefer = udecode($currefer);
