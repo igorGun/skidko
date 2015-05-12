@@ -11,9 +11,15 @@ if ($idg!='none') {
     $group = Table::Fetch('category', $idg, 'id');
    
 if ($_SERVER["REQUEST_URI"]=="/group.php?idg={$idg}") {
-    header('HTTP/1.1 301 Moved Permanently');
-    header("Location: {$group['ename']}");
-}  
+    if($idg!=$group['id'] || $group['zone'] !='group'){
+        
+        header( "HTTP/1.1 404 Not Found" );
+        header('Location: /404.php');
+    }else{
+        header('HTTP/1.1 301 Moved Permanently');
+        header("Location: {$group['ename']}");
+    }
+} 
     if ($group) { 
         cookie_group($group);
         $currefer = udecode($currefer);
