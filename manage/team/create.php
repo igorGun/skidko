@@ -1,5 +1,6 @@
 <?php
 require_once(dirname(dirname(dirname(__FILE__))) . '/app.php');
+require_once("translitihor.php");
 
 //need_manager(true);
 
@@ -8,12 +9,11 @@ if ($_POST) {
 	$_POST['title'] = makeCQuotes($_POST['title']);
 	
     $_POST['product'] = $_POST['title'];
+  
 	$team = $_POST;
-	echo "<pre>";
-	var_dump($team);
-	echo "<pre>";
+	
 	$insert = array(
-		'title', 'market_price', 'team_price', 'team_comission', 'percentage', 'end_time', 'begin_time', 'expire_time', 'min_number', 'max_number', 'summary', 'notice', 'conduser', 'per_number',
+		'title', 'alias', 'market_price', 'team_price', 'team_comission', 'percentage', 'end_time', 'begin_time', 'expire_time', 'min_number', 'max_number', 'summary', 'notice', 'conduser', 'per_number',
 		'product', 'image', 'detail', 'userreview', 'systemreview', 'image1', 'image2', 'flv', 'card',
 		'mobile', 'address', 'fare', 'express', 'delivery', 'credit',
 		'user_id', 'state', 'city_id', 'group_id', 'partner_id', 'create_time' ,
@@ -28,6 +28,7 @@ if ($_POST) {
 	$team['image1'] = upload_image('upload_image1', null, 'team');
     $team['image2'] = upload_image('upload_image2', null, 'team');
 	$team['create_time'] = time();
+	$team['alias'] = get_seo_keyword($_POST['title']);
 	$table = new Table('team', $team);
 	$table->SetStrip('detail', 'systemreview', 'notice');
 	if ( $team_id = $table->insert($insert) ) {
