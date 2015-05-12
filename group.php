@@ -11,6 +11,7 @@ if ($idg!='none') {
     $group = Table::Fetch('category', $idg, 'id');
    
 if ($_SERVER["REQUEST_URI"]=="/group.php?idg={$idg}") {
+    header('HTTP/1.1 301 Moved Permanently');
     header("Location: {$group['ename']}");
 }  
     if ($group) { 
