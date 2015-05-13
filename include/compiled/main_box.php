@@ -59,13 +59,13 @@
               
                     
                      <script type="text/javascript"><!--
-				document.write(VK.Share.button({url: "http://skidkoman.com.ua/team.php?id=<?php echo $team['id']; ?>"},{type: "custom", text: "<img src=\"static/theme/green/css/images/vk_card.png\" />"}));
+				document.write(VK.Share.button({url: "http://skidkoman.com.ua/<?php echo $team['id'].'_'.$team['alias']; ?>"},{type: "custom", text: "<img src=\"static/theme/green/css/images/vk_card.png\" />"}));
 				--></script>
                     
                     <a href="#"><img src="static/theme/green/css/images/od_card.png"/></a>
                     <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
-                    <a href="http://www.facebook.com/share.php?u=skidkoman.com.ua/team.php?id=<?php echo $team['id']; ?>" onclick="return fbs_click()" target="_blank"><img src="static/theme/green/css/images/fb_card.png"/></a>
-                    <a href="http://twitter.com/share?url=http://skidkoman.com.ua/team.php?id=<?php echo $team['id']; ?>&text=<?echo urlencode($team['title'])?>" target="_blank"><img src="static/theme/green/css/images/tw_card.png"/></a>
+                    <a href="http://www.facebook.com/share.php?u=skidkoman.com.ua/<?php echo $team['id'].'_'.$team['alias']; ?>" onclick="return fbs_click()" target="_blank"><img src="static/theme/green/css/images/fb_card.png"/></a>
+                    <a href="http://twitter.com/share?url=http://skidkoman.com.ua/<?php echo $team['id'].'_'.$team['alias']; ?>&text=<?echo urlencode($team['title'])?>" target="_blank"><img src="static/theme/green/css/images/tw_card.png"/></a>
                     </div>
                     <div class="clear"></div>
                  </div>
