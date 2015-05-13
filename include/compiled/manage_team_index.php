@@ -35,12 +35,12 @@
 						echo isset($metrikaPopData[$elURL])? $metrikaPopData[$elURL]: 0; ?></td>
 						<td class="op" nowrap><a href="/ajax/manage.php?action=teamdetail&id=<?php echo $one['id'] ?>" class="ajaxlink">Подробности</a>&nbsp;&nbsp;&nbsp;<a href="/manage/team/edit.php?id=<?php echo $one['id'] ?>">Изменить</a>&nbsp;&nbsp;&nbsp;<a href="/ajax/manage.php?action=teamremove&id=<?php $one['id'] ?>" class="ajaxlink" ask="Удалить?" >Удалить</a><?php if(/*$one['close_time']&&*/in_array($one['state'],array('success','soldout'))){?>&nbsp;&nbsp;&nbsp;<a href="/manage/team/down.php?id=<?php echo $one['id'] ?>" target="_blank">Скачать</a><?php }?></td>
 						<td nowrap><script type="text/javascript"><!--
-				document.write(VK.Share.button({url: "http://skidkoman.dev-lem.ru/<?php echo $one['id'].'_'.$one['alias']; ?>"},{type: "custom", text: "<img src=\"/static/theme/green/css/images/vk_card.png\" />"}));
+				document.write(VK.Share.button({url: "http://skidkoman.com.ua/<?php echo $one['id'].'_'.$one['alias']; ?>"},{type: "custom", text: "<img src=\"/static/theme/green/css/images/vk_card.png\" />"}));
 				--></script>
                     
                     
                     <script>function fbs_click(it) {var $el = $(it).parents('tr').find('.deal-title'); u="http://skidkoman.dev-lem.ru" + $el.attr('href');t=$el.text();window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
-                    <a href="http://www.facebook.com/share.php?u=skidkoman.dev-lem.ru/<?php echo $one['id'].'_'.$one['alias']; ?>" onclick="return fbs_click(this)" target="_blank"><img src="/static/theme/green/css/images/fb_card.png"/></a></td>
+                    <a href="http://www.facebook.com/share.php?u=skidkoman.com.ua/<?php echo $one['id'].'_'.$one['alias']; ?>" onclick="return fbs_click(this)" target="_blank"><img src="/static/theme/green/css/images/fb_card.png"/></a></td>
 					</tr>
 					<?php }}?>
 					<tr><td colspan="7"><div id="no"><?php echo $pagestring; ?></div></tr>
