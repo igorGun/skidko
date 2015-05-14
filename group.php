@@ -10,16 +10,15 @@ $idt = abs(intval($_GET['idt']));
 if ($idg!='none') {
     $group = Table::Fetch('category', $idg, 'id');
    
-if ($_SERVER["REQUEST_URI"]=="/group.php?idg={$idg}") {
-    if($idg!=$group['id'] || $group['zone'] !='group'){
-        
-        header( "HTTP/1.1 404 Not Found" );
-        header('Location: /404.php');
-    }else{
-        header('HTTP/1.1 301 Moved Permanently');
-        header("Location: {$group['ename']}");
-    }
-} 
+    if ($_SERVER["REQUEST_URI"]=="/group.php?idg={$idg}") {
+        if($idg!=intval($group['id']) || $group['zone'] !='group'){
+            header( "HTTP/1.1 404 Not Found" );
+            header('Location: /404.php');
+        }else{
+            header('HTTP/1.1 301 Moved Permanently');
+            header("Location: {$group['ename']}");
+        }
+    } 
     if ($group) { 
         cookie_group($group);
         $currefer = udecode($currefer);
@@ -40,7 +39,9 @@ if ($_SERVER["REQUEST_URI"]=="/group.php?idg={$idg}") {
         }else{
             include template('viewall');
         }
-    }
+}else{header( "HTTP/1.1 404 Not Found" );
+    header('Location: /404.php');
+}
 
 if ($idt!='none') {
     if ($idt) { 
