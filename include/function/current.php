@@ -46,7 +46,7 @@ function current_frontend1(){           //заменяет верхнюю фун
                               ORDER BY `id` ASC
                               ");
     list($tmp) = mysql_fetch_row($counter);
-    $a['/group.php?idg=1']= array('Все акции' => $tmp);
+    $a['/']= array('Все акции' => $tmp); //['/group.php?idg=1]
     $groups_name_id = DB::Query("SELECT `id` , `name`, `ename`
                                  FROM   `category`
                                  WHERE  (`zone` =   'group')/* AND `id` NOT IN ('43','27')*/
@@ -286,7 +286,7 @@ function current_link1($link, $links, $span=false) {
 		//print_r($l);
 		//print_r($links);
         $group_id = intval(substr($l,-2));
-        if ($l!="/group.php?idg=1"){
+        if ($l!="/"){
         	$l=substr($l, 0, -2);
         }
          
