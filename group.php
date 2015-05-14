@@ -18,8 +18,11 @@ if ($idg!='none') {
             header('HTTP/1.1 301 Moved Permanently');
             header("Location: {$group['ename']}");
         }
+    }elseif ($_SERVER["REQUEST_URI"]!="/{$group['ename']}") { 
+        header( "HTTP/1.1 404 Not Found" );
+        header('Location: /404.php');
     }
-  
+
     if ($group) { 
         cookie_group($group);
         $currefer = udecode($currefer);
@@ -43,10 +46,7 @@ if ($idg!='none') {
 }else{header( "HTTP/1.1 404 Not Found" );
     header('Location: /404.php');
 }
-  if ($_SERVER["REQUEST_URI"]!="/{$group['ename']}") { 
-        header( "HTTP/1.1 404 Not Found" );
-        header('Location: /404.php');
-    }
+  
 if ($idt!='none') {
     if ($idt) { 
         cookie_type($idt);
