@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__FILE__) . '/app.php');
 
-$idg = abs(intval($_GET['idg']));
+$idg = $_GET['idg'];
 $idt = abs(intval($_GET['idt']));
 
 
@@ -11,12 +11,12 @@ if ($idg!='none') {
     $group = Table::Fetch('category', $idg, 'id');
    
     if ($_SERVER["REQUEST_URI"]=="/group.php?idg={$idg}") {
-        if($idg!=intval($group['id']) || $group['zone'] !='group'){
+        if($idg!=$group['id'] || $group['zone'] !='group'){
             header( "HTTP/1.1 404 Not Found" );
             header('Location: /404.php');
         }else{
             header('HTTP/1.1 301 Moved Permanently');
-            header("Location: {$group['ename']}");
+        header("Location: {$group['ename']}");
         }
     } 
     if ($group) { 
@@ -34,7 +34,7 @@ if ($idg!='none') {
 //            Utility::Redirect($_SERVER['HTTP_REFERER']);
         }
        // Utility::Redirect(WEB_ROOT .'/index.php');//редирект
-        if ($idg===1) {
+       if ($idg===1) {
             Utility::Redirect(WEB_ROOT .'/index.php');//редирект
         }else{
             include template('viewall');
